@@ -1,3 +1,7 @@
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from ast import ExceptHandler
+from pyrogram import filters
+from pyrogram.types import (InlineKeyboardMarkup, InputMediaPhoto,
 import random
 import string
 from strings.filters import command
