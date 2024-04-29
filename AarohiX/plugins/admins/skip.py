@@ -64,7 +64,7 @@ async def skip(cli, message: Message, _, chat_id):
             f"~︙عزيزي {message.from_user.mention} \n~︙عليك الأشتراك في قناة البوت \n~︙قناة البوت : @{Muntazer}.", 
             disable_web_page_preview=True, 
             reply_markup=InlineKeyboardMarkup([ 
-                [InlineKeyboardButton("< Source Plus >", url=link)] 
+                [InlineKeyboardButton("< Link >", url=link)] 
             ]) 
         ) 
         return 
