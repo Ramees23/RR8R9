@@ -23,13 +23,50 @@ from AarohiX.utils.inline import (
 from AarohiX.utils.logger import play_logs
 from AarohiX.utils.stream.stream import stream
 from config import BANNED_USERS, lyrical
+from config import Muntazer
+
+force_btn = InlineKeyboardMarkup(
+
+    [
+
+        [
+
+            InlineKeyboardButton(
+
+                text="Link .", url=f"{muntazer}"
+
+            ),                        
+
+        ],        
+
+    ]
+
+)
+
+
+
+async def check_is_joined(message):    
+
+    try:
+
+        userid = message.from_user.id
+
+        status = await app.get_chat_member(f"{muntazer}", userid)
+
+        return True
+
+    except Exception:
+
+        await message.reply_text( "**↝: عذرا . عليك لاشتراك في قناة البوت أولاً .**" ,reply_markup=force_btn,parse_mode="markdown",disable_web_page_preview=False)
+
+        return False
 
 
 @app.on_message(
     command(
         [
+            "شغل",
             "تشغيل",
-            "vplay",
             "cplay",
             "cvplay",
             "playforce",
